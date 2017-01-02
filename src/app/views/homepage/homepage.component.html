@@ -1,0 +1,58 @@
+<p>
+    Homepage works fine!
+</p>
+<br />
+<input #box (keyup)="0">
+<p>{{box.value}}</p>
+<br />
+<input ng2-auto-complete
+       [source]="arrayOfStrings"
+       (ngModelChange)="myCallback($event)"
+       placeholder="enter text"
+       loading-text="Loading.."
+       min-chars="2" />
+<br />selected model1: {{json(model1)}}<br />
+<button class="btn btn-primary" (click)="showSuccess()">Show Toast</button>
+<br />
+<br /><br />
+<button class="btn btn-primary" (click)="lgModal.show()">Large modal</button>
+<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" (click)="lgModal.hide()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Large modal</h4>
+            </div>
+            <div class="modal-body">
+                This is first modal popup.
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br /><br />
+<audio controls="controls" src="../../../example1.mp3" type="audio/mpeg" >
+</audio>
+
+<br /><br />
+<div class="dropdown" dropdown>
+    <span dropdown-open>
+        <b>Dropdown Menu <i class="fa fa-angle-down" aria-hidden="true"></i></b>
+    </span>
+    <ul class="dropdown-menu">
+        <li><a href="#">Badman</a></li>
+        <li><a href="#">Sadman</a></li>
+        <li><a href="#">Lieman</a></li>
+    </ul>
+</div>
+<br /><br />
+<!--Bind Dropdwon using html5 select-->
+<!--<select [(ngModel)]="selectedCountry.id">
+    <option *ngFor="let country of countries" value={{country.id}}>
+        {{country.name}}
+    </option>
+</select>-->
+<a href="#/login">Login</a>
+<a href="#/signup">SignUp</a>
